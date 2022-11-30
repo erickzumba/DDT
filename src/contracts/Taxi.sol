@@ -3,11 +3,7 @@
 pragma solidity ^0.8.0;
 
 contract Taxi {
-    string public name;
-    uint public rideCount = 0;
-    uint public requestCount = 0;
-    mapping(uint => Request) public requests;
-    mapping(uint => Ride) public rides;
+    
     constructor()  {
         name = "CCT Taxi App";
             }
@@ -49,6 +45,12 @@ contract Taxi {
         address payable driver  
     );
 
+    string public name;
+    uint public rideCount = 0;
+    uint public requestCount = 0;
+    mapping(uint => Request) public requests;
+    mapping(uint => Ride) public rides;
+
 //from customers POV
     function createRequest(string memory _fromLocation, string memory _toLocation) public {
     // Require a valid location
@@ -76,7 +78,7 @@ function createRide(uint _id , uint _price) public {
     emit rideCreated(rideCount,_request, _price, payable(msg.sender));
 }
 
-//will start only when customer has accepted price  needs ride id
+//will start only when customer has accepted price  CUSTOMER PCV
 function startRide(uint _id) public payable {
     // Require a valid location
     require(_id > 0);       
