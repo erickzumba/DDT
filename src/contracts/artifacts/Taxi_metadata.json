@@ -1,0 +1,183 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "fromLocation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "toLocation",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "rider",
+						"type": "address"
+					}
+				],
+				"name": "reqCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "fromLocation",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "toLocation",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "rider",
+								"type": "address"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct Taxi.Request",
+						"name": "req",
+						"type": "tuple"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "driver",
+						"type": "address"
+					}
+				],
+				"name": "rideCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "requests",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "fromLocation",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "toLocation",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "rider",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rideCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Tutorial_9/src/contracts/Taxi.sol": "Taxi"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Tutorial_9/src/contracts/Taxi.sol": {
+			"keccak256": "0x6ea8798b7f94672ab2dcf6382e484e388b011bf11524d5dd799270fc7e78a7d1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0addf559ece089d9d1b3cbea21938bd7aa0f0366f916432bbca55d0d26698ef9",
+				"dweb:/ipfs/QmbUoG7RfkZKncmsYj9C9Y1dg7hkPDwZYzJDF6WwJ3mwab"
+			]
+		}
+	},
+	"version": 1
+}
