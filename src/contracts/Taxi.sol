@@ -35,14 +35,14 @@ contract Taxi {
         uint id,
         Request req,
         uint price,
-        address payable  driver       
+        address driver       
 
     );
 
     event rideStarted(
         uint id,       
-        uint price,
-        address payable driver  
+        uint price
+         
     );
 
     string public name;
@@ -75,27 +75,23 @@ function createRide(uint _id , uint _price) public {
     // Create the ride
     rides[rideCount] = Ride(rideCount, _request, _price, payable(msg.sender));
     // Trigger an event
-    emit rideCreated(rideCount,_request, _price, payable(msg.sender));
+    emit rideCreated(rideCount,_request, _price, msg.sender);
 }
 
 //will start only when customer has accepted price  CUSTOMER PCV
-function startRide(uint _id) public payable {
-    // Require a valid location
-    require(_id > 0);       
+function startRide(uint _id) public payable {         
     // Increment request count
     Ride memory _ride = rides[_id];
     // Fetch the owner
-    address payable _driver = _ride.driver;
-    // Make sure the product has a valid id
+    address _driver = _ride.driver;
+    // Make sure the ride has a valid id
     require(_ride.id > 0 && _ride.id <= rideCount);
     // Require that there is enough Ether in the transaction
-    require(msg.value >= _ride.price);    
-    // Update the product
-    rides[_id] = _ride;
+    require(msg.value >= _ride.price);
     // Pay the seller by sending them Ether
-    _driver.transfer(msg.value);
+    payable(_driver).transfer(msg.value);
     // Trigger an event
-    emit rideStarted(rideCount, _ride.price, payable(msg.sender));
+    emit rideStarted(rideCount, _ride.price);
 }
 
    
